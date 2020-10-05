@@ -3,7 +3,8 @@
 ![Eye_of_Horus_Right.png](Eye_of_Horus_Right.png)  
 The name Project Horus is coming form the **Eye of Horus**, an Egyptian symbol often related to protection, similar to the Eye of Ra (different good).
 
-Repository focus in:
+Repository focus in:  
+
 * Find IP cam on the network.  
 * Displays the video stream of CCTV cameras (use RTSP and/or ONVIF).  
 
