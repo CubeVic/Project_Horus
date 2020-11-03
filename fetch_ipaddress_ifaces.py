@@ -8,12 +8,13 @@ from netifaces import interfaces, ifaddresses, AF_INET
 
 #Todo:
 """set logging system for this script"""
-print(f'\n Interfaces: {interfaces()} \n')
+print(f'\n Interfaces: {interfaces()} \n------------>\n')
 
 def extract_scope_(interface):
 	""" it willl filter the Ethernet/internet interface
 	and return just the IP address """
 	if AF_INET in ifaddresses(interface):
+		print(f'interface {interface} : {ifaddresses(interface)[AF_INET]}')
 		ip_address = ifaddresses(interface)[AF_INET][0]['addr']
 		return ip_address
 
@@ -26,5 +27,5 @@ if not scope : ips = list(map(extract_scope_,interfaces()))
 # Extract the first two numbers of the address
 scope = ['.'.join(ip.split('.')[:2]) for ip in ips if ip]
 
-print(scope) #the scope,
+print(f'\n------------>\nscope {scope}') #the scope,
 # ['127.0', '192.168'] 
