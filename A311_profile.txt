@@ -1,0 +1,181 @@
+[{
+    'Name': 'Profile0',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 2,
+        'SourceToken': 'VS_Conf0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 3072,
+            'height': 2048
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VE_Conf0',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1920,
+            'Height': 1080
+        },
+        'Quality': 100.0,
+        'RateControl': {
+            'FrameRateLimit': 30,
+            'EncodingInterval': 1,
+            'BitrateLimit': 4000
+        },
+        'MPEG4': None,
+        'H264': {
+            'GovLength': 90,
+            'H264Profile': 'High'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.1',
+                'IPv6Address': None
+            },
+            'Port': 5100,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'token': 'VE_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 2,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': False,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.1',
+                'IPv6Address': None
+            },
+            'Port': 5100,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': None,
+    'token': 'Profile0',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profile1',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 2,
+        'SourceToken': 'VS_Conf0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 3072,
+            'height': 2048
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VE_Conf1',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1280,
+            'Height': 720
+        },
+        'Quality': 66.0,
+        'RateControl': {
+            'FrameRateLimit': 30,
+            'EncodingInterval': 1,
+            'BitrateLimit': 2000
+        },
+        'MPEG4': None,
+        'H264': {
+            'GovLength': 90,
+            'H264Profile': 'High'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.2',
+                'IPv6Address': None
+            },
+            'Port': 5104,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'token': 'VE_Conf1',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 2,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': False,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.1',
+                'IPv6Address': None
+            },
+            'Port': 5100,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': None,
+    'token': 'Profile1',
+    'fixed': False,
+    '_attr_1': {
+}
+}]

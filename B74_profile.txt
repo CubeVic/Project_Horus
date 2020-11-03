@@ -1,0 +1,509 @@
+[{
+    'Name': 'Profile0',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 5,
+        'SourceToken': 'VS_Src0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VE_Conf0',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1920,
+            'Height': 1080
+        },
+        'Quality': 100.0,
+        'RateControl': {
+            'FrameRateLimit': 30,
+            'EncodingInterval': 1,
+            'BitrateLimit': 4000
+        },
+        'MPEG4': None,
+        'H264': {
+            'GovLength': 90,
+            'H264Profile': 'High'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.1',
+                'IPv6Address': None
+            },
+            'Port': 5100,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'token': 'VE_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 5,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': None,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 0,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': {
+        '_value_1': [
+            {
+                'Name': 'AO_Conf',
+                'UseCount': 5,
+                'OutputToken': 'AO_Src',
+                'SendPrimacy': None,
+                'OutputLevel': 70,
+                '_value_1': None,
+                'token': 'AO_Conf',
+                '_attr_1': {
+            }
+            },
+            {
+                'Name': 'AD_Conf',
+                'UseCount': 5,
+                '_value_1': None,
+                'token': 'AD_Conf',
+                '_attr_1': {
+            }
+            }
+        ],
+        'AudioOutputConfiguration': None,
+        'AudioDecoderConfiguration': None,
+        'Extension': None,
+        '_attr_1': None
+    },
+    'token': 'Profile0',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profile1',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 5,
+        'SourceToken': 'VS_Src0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VE_Conf1',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 640,
+            'Height': 480
+        },
+        'Quality': 100.0,
+        'RateControl': {
+            'FrameRateLimit': 5,
+            'EncodingInterval': 1,
+            'BitrateLimit': 4000
+        },
+        'MPEG4': None,
+        'H264': {
+            'GovLength': 15,
+            'H264Profile': 'High'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.2',
+                'IPv6Address': None
+            },
+            'Port': 5104,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'token': 'VE_Conf1',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 5,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': None,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 0,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': {
+        '_value_1': [
+            {
+                'Name': 'AO_Conf',
+                'UseCount': 5,
+                'OutputToken': 'AO_Src',
+                'SendPrimacy': None,
+                'OutputLevel': 70,
+                '_value_1': None,
+                'token': 'AO_Conf',
+                '_attr_1': {
+            }
+            },
+            {
+                'Name': 'AD_Conf',
+                'UseCount': 5,
+                '_value_1': None,
+                'token': 'AD_Conf',
+                '_attr_1': {
+            }
+            }
+        ],
+        'AudioOutputConfiguration': None,
+        'AudioDecoderConfiguration': None,
+        'Extension': None,
+        '_attr_1': None
+    },
+    'token': 'Profile1',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profile2',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 5,
+        'SourceToken': 'VS_Src0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VE_Conf2',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1280,
+            'Height': 720
+        },
+        'Quality': 100.0,
+        'RateControl': {
+            'FrameRateLimit': 15,
+            'EncodingInterval': 1,
+            'BitrateLimit': 4000
+        },
+        'MPEG4': None,
+        'H264': {
+            'GovLength': 45,
+            'H264Profile': 'High'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '228.5.6.3',
+                'IPv6Address': None
+            },
+            'Port': 5108,
+            'TTL': 16,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'token': 'VE_Conf2',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 5,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': None,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 0,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': {
+        '_value_1': [
+            {
+                'Name': 'AO_Conf',
+                'UseCount': 5,
+                'OutputToken': 'AO_Src',
+                'SendPrimacy': None,
+                'OutputLevel': 70,
+                '_value_1': None,
+                'token': 'AO_Conf',
+                '_attr_1': {
+            }
+            },
+            {
+                'Name': 'AD_Conf',
+                'UseCount': 5,
+                '_value_1': None,
+                'token': 'AD_Conf',
+                '_attr_1': {
+            }
+            }
+        ],
+        'AudioOutputConfiguration': None,
+        'AudioDecoderConfiguration': None,
+        'Extension': None,
+        '_attr_1': None
+    },
+    'token': 'Profile2',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profile3',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 5,
+        'SourceToken': 'VS_Src0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': None,
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 5,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': None,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 0,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': {
+        '_value_1': [
+            {
+                'Name': 'AO_Conf',
+                'UseCount': 5,
+                'OutputToken': 'AO_Src',
+                'SendPrimacy': None,
+                'OutputLevel': 70,
+                '_value_1': None,
+                'token': 'AO_Conf',
+                '_attr_1': {
+            }
+            },
+            {
+                'Name': 'AD_Conf',
+                'UseCount': 5,
+                '_value_1': None,
+                'token': 'AD_Conf',
+                '_attr_1': {
+            }
+            }
+        ],
+        'AudioOutputConfiguration': None,
+        'AudioDecoderConfiguration': None,
+        'Extension': None,
+        '_attr_1': None
+    },
+    'token': 'Profile3',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profile4',
+    'VideoSourceConfiguration': {
+        'Name': 'VS_Conf0',
+        'UseCount': 5,
+        'SourceToken': 'VS_Src0',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': None,
+        'Extension': None,
+        'token': 'VS_Conf0',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': None,
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'ME_Conf',
+        'UseCount': 5,
+        'PTZStatus': None,
+        'Events': None,
+        'Analytics': None,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 0,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=30),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'ME_Conf',
+        '_attr_1': {
+    }
+    },
+    'Extension': {
+        '_value_1': [
+            {
+                'Name': 'AO_Conf',
+                'UseCount': 5,
+                'OutputToken': 'AO_Src',
+                'SendPrimacy': None,
+                'OutputLevel': 70,
+                '_value_1': None,
+                'token': 'AO_Conf',
+                '_attr_1': {
+            }
+            },
+            {
+                'Name': 'AD_Conf',
+                'UseCount': 5,
+                '_value_1': None,
+                'token': 'AD_Conf',
+                '_attr_1': {
+            }
+            }
+        ],
+        'AudioOutputConfiguration': None,
+        'AudioDecoderConfiguration': None,
+        'Extension': None,
+        '_attr_1': None
+    },
+    'token': 'Profile4',
+    'fixed': False,
+    '_attr_1': {
+}
+}]
