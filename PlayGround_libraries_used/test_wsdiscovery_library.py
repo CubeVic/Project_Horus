@@ -22,8 +22,19 @@ for service in services:
 	# print("searching for service")
 	# print(service.getEPR() + ":" + service.getXAddrs()[0])
 	# print(f'{service.getXAddrs()}\n')
+	print(f'\nthis is the addres: {service.getXAddrs()[0]}')
+	print(f'this the scopes: {service.getScopes()}')
+	print(f'this getTypes() {service.getTypes()}\n')
 	addr.append(service.getXAddrs()[0])
-
-print(addr)
-print(len(addr))
+# print(dir(wsd))
+# print(addr)
+# print(len(addr))
 wsd.stop()
+
+########################################################
+####    not fully understood, but enought            ###
+####    to get what i need, the onvif devices        ###
+####    on the network, new script                   ###
+####    called: "fetch_webservices_wsdiscovery.py"   ###
+####    is a refined version of this script          ###
+########################################################
