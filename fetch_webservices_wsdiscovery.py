@@ -20,6 +20,7 @@ mac_addr_scope = base + 'macaddr/'
 max_resolution_scope = base + 'max_resolution/'
 activeCode_scope = base + 'ActiveCode/'
 cloudUserName = base + 'CloudUserName/'
+acc_scope = base + 'acc/'
 
 scope1 = Scope(base) # to be use later to filter just those with ONVIF services
 
