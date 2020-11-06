@@ -4,7 +4,7 @@ from wsdiscovery import QName, Scope
 
 # Define type, scope & address of service
 # ttype1 = QName("http://www.onvif.org/ver10/device/wsdl", "Device")
-# scope1 = Scope("onvif://www.onvif.org/Model")
+scope1 = Scope("onvif://www.onvif.org/type")
 # xAddr1 = "127.0.0.1:8998/abc"
 
 # Publish the service
@@ -16,7 +16,7 @@ from wsdiscovery import QName, Scope
 # Discover it (along with any other service out there)
 wsd = WSDiscovery()
 wsd.start()
-services = wsd.searchServices()
+services = wsd.searchServices(scopes=[scope1])
 addr = list()
 for service in services:
 	# print("searching for service")

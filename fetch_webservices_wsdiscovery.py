@@ -1,41 +1,40 @@
 from wsdiscovery.discovery import ThreadedWSDiscovery as WSDiscovery
-import wsdiscovery.scope
+from wsdiscovery import Scope
+import re
 
-profile_scope = 'onvif://www.onvif.org/Profile/'
-hardware_scope = "onvif://www.onvif.org/hardware/"
-name_scope = "onvif://www.onvif.org/name/"
-manufacture_scope = "onvif://www.onvif.org/manufacturer/"
-serial_scope = "onvif://www.onvif.org/serial/"
+
+base = 'onvif://www.onvif.org/'
+type_scope = base + 'type/'
+hardware_scope = base + 'hardware/'
+profile_scope = base + 'Profile/'
+name_scope = base + 'name/'
+location_scope = base + 'location/'
+register_status_scope = base + 'register_status/'
+reigster_server_scope = base + 'register_server/'
+regist_id_scope = base + 'regist_id/'
+manufacture_scope = base + 'manufacturer/'
+video_source_number = base + 'VideoSourceNumber/'
+version_scope = base + 'version/'
+serial_scope = base + 'serial/'
+mac_addr_scope = base + 'macaddr/'
+max_resolution_scope = base + 'max_resolution/'
+activeCode_scope = base + 'ActiveCode/'
+cloudUserName = base + 'CloudUserName/'
+
+scope1 = Scope(base) # to be use later to filter just those with ONVIF services
 
 wsd = WSDiscovery()
 wsd.start()
-devices_services = wsd.searchServices()
-# print(f'services: {dir(devices_services[0])}')
+devices_services = wsd.searchServices(scopes=[scope1])
+
 
 for service in devices_services:
 	#filter those devices that dont have ONVIF service
-	if str(service.getTypes()[0]).find('onvif') != -1:
-
-		print(f'\nthis is the address with getXAddrs():\n-->{service.getXAddrs()[0]}\n')
-
-		#transform from object to string
-		scopes = [str(scope) for scope in service.getScopes()]
-		for scope in scopes:
-			if scope.find(hardware_scope) !=-1:
-				hardware = scope.split(hardware_scope)[1]
-				print(f'- Hardware: {hardware} \n')	
-			if scope.find(name_scope) !=-1:
-				name = scope.split(name_scope)[1]
-				print(f'- Name: {name} \n')	
-			if scope.find(manufacture_scope) !=-1:
-				manufacture = scope.split(manufacture_scope)[1]
-				print(f'- Manufacture: {manufacture} \n')
-			if scope.find(serial_scope) !=-1:
-				serial = scope.split(serial_scope)[1]
-				print(f'- Serial: {serial} \n')									
-		
-		# print(f'this getTypes(), type of services:')
-		# for type_service in service.getTypes():
-		# 	print(f'- {type_service}\n')	
+	# print(f'\nAddress:\n{service.getXAddrs()[0]}\n')
+	ipaddress = re.search('(\d+|\.)+', str(service.getXAddrs()[0])).group(0)
+	print(f'\nIP Address: {ipaddress}')
+	for scope in service.getScopes():
+		#Scope methods getMatchBy, getQuotedValue, getValue
+		print(scope.getValue())
 
 wsd.stop()
