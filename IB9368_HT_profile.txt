@@ -1,0 +1,211 @@
+[{
+    'Name': 'Profile3b14',
+    'VideoSourceConfiguration': {
+        'Name': 'VideoSourceConfiguration1',
+        'UseCount': 3,
+        'SourceToken': 'VideoSource1',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': [
+            <Element {http://www.onvif.org/ver10/schema}Extension at 0x5e518c8>
+        ],
+        'Extension': None,
+        'token': 'VideoSourceConfiguration1',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VideoEncoderConfiguration1_1',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1920,
+            'Height': 1080
+        },
+        'Quality': 70.0,
+        'RateControl': {
+            'FrameRateLimit': 30,
+            'EncodingInterval': 1,
+            'BitrateLimit': 80000
+        },
+        'MPEG4': {
+            'GovLength': 0,
+            'Mpeg4Profile': 'SP'
+        },
+        'H264': {
+            'GovLength': 30,
+            'H264Profile': 'Main'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '239.128.1.99',
+                'IPv6Address': '::1'
+            },
+            'Port': 5560,
+            'TTL': 15,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=1800),
+        '_value_1': None,
+        'token': 'VideoEncoderConfiguration1_1',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': None,
+    'Extension': None,
+    'token': 'Profile3b14',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profile28bb',
+    'VideoSourceConfiguration': {
+        'Name': 'VideoSourceConfiguration1',
+        'UseCount': 3,
+        'SourceToken': 'VideoSource1',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': [
+            <Element {http://www.onvif.org/ver10/schema}Extension at 0x5e54ad0>
+        ],
+        'Extension': None,
+        'token': 'VideoSourceConfiguration1',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VideoEncoderConfiguration1_2',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 640,
+            'Height': 360
+        },
+        'Quality': 70.0,
+        'RateControl': {
+            'FrameRateLimit': 15,
+            'EncodingInterval': 1,
+            'BitrateLimit': 80000
+        },
+        'MPEG4': {
+            'GovLength': 0,
+            'Mpeg4Profile': 'SP'
+        },
+        'H264': {
+            'GovLength': 15,
+            'H264Profile': 'Main'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '239.128.1.100',
+                'IPv6Address': '::1'
+            },
+            'Port': 5564,
+            'TTL': 15,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=1800),
+        '_value_1': None,
+        'token': 'VideoEncoderConfiguration1_2',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': None,
+    'Extension': None,
+    'token': 'Profile28bb',
+    'fixed': False,
+    '_attr_1': {
+}
+}, {
+    'Name': 'Profilee6f1',
+    'VideoSourceConfiguration': {
+        'Name': 'VideoSourceConfiguration1',
+        'UseCount': 3,
+        'SourceToken': 'VideoSource1',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': [
+            <Element {http://www.onvif.org/ver10/schema}Extension at 0x5e54c10>
+        ],
+        'Extension': None,
+        'token': 'VideoSourceConfiguration1',
+        '_attr_1': {
+    }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'VideoEncoderConfiguration1_3',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1920,
+            'Height': 1080
+        },
+        'Quality': 70.0,
+        'RateControl': {
+            'FrameRateLimit': 30,
+            'EncodingInterval': 1,
+            'BitrateLimit': 80000
+        },
+        'MPEG4': {
+            'GovLength': 0,
+            'Mpeg4Profile': 'SP'
+        },
+        'H264': {
+            'GovLength': 30,
+            'H264Profile': 'Main'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '239.128.1.101',
+                'IPv6Address': '::1'
+            },
+            'Port': 5568,
+            'TTL': 15,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=1800),
+        '_value_1': None,
+        'token': 'VideoEncoderConfiguration1_3',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': None,
+    'PTZConfiguration': None,
+    'MetadataConfiguration': None,
+    'Extension': None,
+    'token': 'Profilee6f1',
+    'fixed': False,
+    '_attr_1': {
+}
+}]
