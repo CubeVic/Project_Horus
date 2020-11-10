@@ -3,6 +3,9 @@ import asyncio
 
 from onvif import ONVIFCamera
 
+from PIL import Image
+import io
+
 async def media_profile_configuration():
 	"""
 	A media profile consists of configuration entities such as:
@@ -15,7 +18,7 @@ async def media_profile_configuration():
 	"""
 
 	# Create a media service 
-	mycam = ONVIFCamera("172.16.18.110", 80, "admin", "123456")
+	mycam = ONVIFCamera("172.16.18.162", 80, "admin", "123456")
 	await mycam.update_xaddrs()
 	media_service = mycam.create_media_service()
 
@@ -25,7 +28,7 @@ async def media_profile_configuration():
 	# print(profiles)
 	print(f'Number of profiles available: {len(profiles)}')
 	for profile in profiles:
-		print(f'- Profile Name: {profile.Name} ')
+		print(f'Profile Name: {profile.Name} ')
 		print(f'	- Token: {profile.token}')
 	
 
@@ -34,23 +37,58 @@ async def media_profile_configuration():
 
 	#Get all encoder configuration
 	configuration_list = await media_service.GetVideoEncoderConfigurations()
+	# print(f'Configuration list: {configuration_list}')
 
 	#Use the first profile of the configuration
 	video_encoder_configuration = configuration_list[0]
-	print(video_encoder_configuration)
+	# print(video_encoder_configuration)
 
 	#get Video encoder configuration option
-	option = await media_service.GetVideoEncoderConfigurationOptions({"ProfileToken": token})
-	# print(option)
+	options = await media_service.GetVideoEncoderConfigurationOptions({"ProfileToken": token})
+	# print(f'options : {options}')
 
 	#Setup Stream configuration
 	video_encoder_configuration.Encoding = "H264"
 
 	#Setup Resolution
-	video_encoder_configuration.Resolution.Width = option.H264.ResolutionsAvailable[0].Width
-	video_encoder_configuration.Resolution.Height = option.H264.ResolutionsAvailable[0].Height
+	video_encoder_configuration.Resolution.Width = options.H264.ResolutionsAvailable[0].Width
+	video_encoder_configuration.Resolution.Height = options.H264.ResolutionsAvailable[0].Height
 	print(f'Resolution:\n- Width: {video_encoder_configuration.Resolution.Width}')
 	print(f'- Height: {video_encoder_configuration.Resolution.Height}')
+
+	#Setup Quality
+	video_encoder_configuration.Quality = options.QualityRange.Min # yes without the H264
+	print(f'Quality: {video_encoder_configuration.Quality}')
+
+	#SetUp FrameRate
+	video_encoder_configuration.RateControl.FrameRateLimit = options.H264.FrameRateRange.Min
+	print(f'FrameRate: {video_encoder_configuration.RateControl.FrameRateLimit}')
+
+	#Setup EncodingInterval
+	video_encoder_configuration.RateControl.EncodingInterval = options.H264.EncodingIntervalRange.Min
+	print(f'Encoding Interval: {video_encoder_configuration.RateControl.EncodingInterval}')
+
+	#Setup Bitrate
+	# video_encoder_configuration.RateControl.BitrateLimit = options.Extension.H264[0].BitrateRange[0].Min[0]
+
+	#Create request type instance
+	request = media_service.create_type('SetVideoEncoderConfiguration')
+	request.Configuration = video_encoder_configuration
+    # ForcePersistence is obsolete and should always be assumed to be True
+	request.ForcePersistence = True
+    # Set the video encoder configuration
+	await media_service.SetVideoEncoderConfiguration(request)
+
+	uri_snapshot = await mycam.get_snapshot_uri(token)
+	print(f'snapshot URI: {uri_snapshot}')
+	snapshot = await mycam.get_snapshot(token, basic_auth=True)
+	# print(type(snapshot))
+
+	#read the bytes
+	im = Image.open(io.BytesIO(snapshot))
+	#display the image
+	im.show()
+
 
 	await mycam.close()
 
