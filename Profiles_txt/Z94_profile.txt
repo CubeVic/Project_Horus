@@ -1,0 +1,355 @@
+[{
+    'Name': 'media_profile1',
+    'VideoSourceConfiguration': {
+        'Name': 'video_source_config1',
+        'UseCount': 1,
+        'SourceToken': 'video_source',
+        'Bounds': {
+            'x': 0,
+            'y': 0,
+            'width': 1920,
+            'height': 1080
+        },
+        '_value_1': [
+            <Element {http://www.onvif.org/ver10/schema}Extension at 0x57ad6e8>
+        ],
+        'Extension': None,
+        'token': 'video_source_config1',
+        '_attr_1': {
+            'ViewMode': 'Original'
+        }
+    },
+    'AudioSourceConfiguration': None,
+    'VideoEncoderConfiguration': {
+        'Name': 'video_encoder_config',
+        'UseCount': 1,
+        'Encoding': 'H264',
+        'Resolution': {
+            'Width': 1920,
+            'Height': 1080
+        },
+        'Quality': 5.0,
+        'RateControl': {
+            'FrameRateLimit': 5,
+            'EncodingInterval': 1,
+            'BitrateLimit': 2000
+        },
+        'MPEG4': None,
+        'H264': {
+            'GovLength': 60,
+            'H264Profile': 'Main'
+        },
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 128,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=60),
+        '_value_1': None,
+        'token': 'video_encoder_config',
+        '_attr_1': {
+    }
+    },
+    'AudioEncoderConfiguration': None,
+    'VideoAnalyticsConfiguration': {
+        'Name': 'analytics_video_source',
+        'UseCount': 1,
+        'AnalyticsEngineConfiguration': {
+            'AnalyticsModule': [
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'Sensitivity',
+                                'Value': '70'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}CellLayout at 0x57b6288>,
+                                'Name': 'Layout'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyCellMotion',
+                    'Type': 'tt:CellMotionEngine'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'Sensitivity',
+                                'Value': '0'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57b6698>,
+                                'Name': 'Field'
+                            },
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}Transformation at 0x57b6828>,
+                                'Name': 'Transformation'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyTamper',
+                    'Type': 'tt:TamperEngine'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'Enable',
+                                'Value': 'false'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}Transformation at 0x57ad6c0>,
+                                'Name': 'Layout'
+                            },
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57b6a08>,
+                                'Name': 'Field'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyFieldDetectorModule',
+                    'Type': 'tt:FieldDetectorEngine'
+                }
+            ],
+            'Extension': None,
+            '_attr_1': None
+        },
+        'RuleEngineConfiguration': {
+            'Rule': [
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'MinCount',
+                                'Value': '39'
+                            },
+                            {
+                                'Name': 'AlarmOnDelay',
+                                'Value': '1000'
+                            },
+                            {
+                                'Name': 'AlarmOffDelay',
+                                'Value': '30000'
+                            },
+                            {
+                                'Name': 'ActiveCells',
+                                'Value': '0P8A8A=='
+                            }
+                        ],
+                        'ElementItem': [],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyMotionDetectorRule',
+                    'Type': 'tt:CellMotionDetector'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57b6c10>,
+                                'Name': 'Field'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyTamperDetectorRule',
+                    'Type': 'tt:TamperDetector'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'FieldEnable',
+                                'Value': 'false'
+                            },
+                            {
+                                'Name': 'Sensitivity',
+                                'Value': '50'
+                            },
+                            {
+                                'Name': 'Threshold',
+                                'Value': 'PT1S'
+                            },
+                            {
+                                'Name': 'Percent',
+                                'Value': '1'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57b6e40>,
+                                'Name': 'Field'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyFieldDetector1',
+                    'Type': 'tt:FieldDetector'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'FieldEnable',
+                                'Value': 'false'
+                            },
+                            {
+                                'Name': 'Sensitivity',
+                                'Value': '50'
+                            },
+                            {
+                                'Name': 'Threshold',
+                                'Value': 'PT1S'
+                            },
+                            {
+                                'Name': 'Percent',
+                                'Value': '1'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57be1e8>,
+                                'Name': 'Field'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyFieldDetector2',
+                    'Type': 'tt:FieldDetector'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'FieldEnable',
+                                'Value': 'false'
+                            },
+                            {
+                                'Name': 'Sensitivity',
+                                'Value': '50'
+                            },
+                            {
+                                'Name': 'Threshold',
+                                'Value': 'PT1S'
+                            },
+                            {
+                                'Name': 'Percent',
+                                'Value': '1'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57be558>,
+                                'Name': 'Field'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyFieldDetector3',
+                    'Type': 'tt:FieldDetector'
+                },
+                {
+                    'Parameters': {
+                        'SimpleItem': [
+                            {
+                                'Name': 'FieldEnable',
+                                'Value': 'false'
+                            },
+                            {
+                                'Name': 'Sensitivity',
+                                'Value': '50'
+                            },
+                            {
+                                'Name': 'Threshold',
+                                'Value': 'PT1S'
+                            },
+                            {
+                                'Name': 'Percent',
+                                'Value': '1'
+                            }
+                        ],
+                        'ElementItem': [
+                            {
+                                '_value_1': <Element {http://www.onvif.org/ver10/schema}PolygonConfiguration at 0x57be8c8>,
+                                'Name': 'Field'
+                            }
+                        ],
+                        'Extension': None,
+                        '_attr_1': None
+                    },
+                    'Name': 'MyFieldDetector4',
+                    'Type': 'tt:FieldDetector'
+                }
+            ],
+            'Extension': None,
+            '_attr_1': None
+        },
+        '_value_1': None,
+        'token': 'analytics_video_source',
+        '_attr_1': {
+    }
+    },
+    'PTZConfiguration': None,
+    'MetadataConfiguration': {
+        'Name': 'metadata_config',
+        'UseCount': 1,
+        'PTZStatus': {
+            'Status': False,
+            'Position': False,
+            '_attr_1': None
+        },
+        'Events': None,
+        'Analytics': True,
+        'Multicast': {
+            'Address': {
+                'Type': 'IPv4',
+                'IPv4Address': '0.0.0.0',
+                'IPv6Address': None
+            },
+            'Port': 0,
+            'TTL': 128,
+            'AutoStart': False,
+            '_value_1': None,
+            '_attr_1': None
+        },
+        'SessionTimeout': datetime.timedelta(seconds=60),
+        '_value_1': None,
+        'AnalyticsEngineConfiguration': None,
+        'Extension': None,
+        'token': 'metadata_config',
+        '_attr_1': {
+    }
+    },
+    'Extension': None,
+    'token': 'media_profile1',
+    'fixed': True,
+    '_attr_1': {
+}
+}]

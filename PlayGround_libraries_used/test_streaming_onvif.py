@@ -87,6 +87,9 @@ async def media_profile_configuration():
 	#read the bytes
 	im = Image.open(io.BytesIO(snapshot))
 	#display the image
+	# im.show() 
+	thumbnail_size = 128,128
+	im.thumbnail(size)
 	im.show()
 
 
@@ -96,3 +99,10 @@ async def media_profile_configuration():
 if __name__ == "__main__":
 	loop = asyncio.get_event_loop()
 	loop.run_until_complete(media_profile_configuration())
+
+
+##########################################################
+#####                                               ######
+#####     Example of configuration of a stream      ######
+#####												######
+##########################################################

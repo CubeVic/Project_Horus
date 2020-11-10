@@ -13,3 +13,10 @@ async def camera_():
     # print(token)
     return await mycam.close()
 asyncio.run(camera_())
+
+###############################################################
+####                                                      #####
+####        Move to script called                         #####
+####        fetch_cam_profile.py                          #####
+####                                                      #####
+###############################################################
