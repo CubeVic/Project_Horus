@@ -43,13 +43,5 @@ devices_services = wsd.searchServices()
 
 fetch_devices(devices_services)
 
-# for service in devices_services:
-# 	#filter those devices that dont have ONVIF service
-# 	# print(f'\nAddress:\n{service.getXAddrs()[0]}\n')
-# 	ipaddress = re.search('(\d+|\.)+', str(service.getXAddrs()[0])).group(0)
-# 	print(f'\nIP Address: {ipaddress}')
-# 	for scope in service.getScopes():
-# 		#Scope methods getMatchBy, getQuotedValue, getValue
-# 		print(scope.getValue())
-# print(f'\nnumber of devices detected: {len(devices_services)}')
+
 wsd.stop()
