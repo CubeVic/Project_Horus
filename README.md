@@ -1,7 +1,6 @@
 
 
 ![Eye_of_Horus_Right.png](Hero_Image_Project_Horus.png)  
-The name Project Horus is coming form the **Eye of Horus**, an Egyptian symbol often related to protection, similar to the Eye of Ra (different good).
 
 Repository focus in:  
 
