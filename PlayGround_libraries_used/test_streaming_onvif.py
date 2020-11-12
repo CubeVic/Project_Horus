@@ -6,6 +6,8 @@ from onvif import ONVIFCamera
 from PIL import Image
 import io
 
+
+
 async def media_profile_configuration():
 	"""
 	A media profile consists of configuration entities such as:
@@ -25,7 +27,7 @@ async def media_profile_configuration():
 	# get Camera Profiles
 
 	profiles = await media_service.GetProfiles()
-	# print(profiles)
+	print(profiles[0])
 	print(f'Number of profiles available: {len(profiles)}')
 	for profile in profiles:
 		print(f'Profile Name: {profile.Name} ')
@@ -84,21 +86,31 @@ async def media_profile_configuration():
 	snapshot = await mycam.get_snapshot(token, basic_auth=True)
 	# print(type(snapshot))
 
-	#read the bytes
-	im = Image.open(io.BytesIO(snapshot))
-	#display the image
+	# #read the bytes
+	# im = Image.open(io.BytesIO(snapshot))
+	# #display the image
 	# im.show() 
-	thumbnail_size = 128,128
-	im.thumbnail(size)
-	im.show()
-
-
+	# thumbnail_size = 128,128
+	# im.thumbnail(size)
+	# im.show()
+	stream_setup = {'StreamSetup' : 
+	{'Stream' : 'RTP_unicast', 
+	'Transport' : { 
+	'Protocol' : 'TCP' }}, 
+	'ProfileToken' : token}
+	print(stream_setup)
+	uri = await media_service.GetStreamUri(stream_setup)
+	print(uri)
 	await mycam.close()
 
+    # rtsp_stream = uri.Uri
+    # print(f'uri: {uri.Uri}')
+    # return rtsp_stream
 
 if __name__ == "__main__":
 	loop = asyncio.get_event_loop()
 	loop.run_until_complete(media_profile_configuration())
+	
 
 
 ##########################################################
