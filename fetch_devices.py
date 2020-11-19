@@ -4,6 +4,30 @@ import re
 
 import sensecam_discovery
 
+import  yaml
+import logging
+import logging.config
+
+#
+# logger_file.debug('logger_file ebug message')
+# logger_file.info('logger_file info message')
+# logger_file.warning('logger_file warn message')
+# logger_file.error('logger_file error message')
+# logger_file.critical('logger_file critical message')
+
+
+
+with open('config.yml', 'r') as config:
+    try: 
+        configuration = yaml.safe_load(config.read())
+        print(configuration)
+        logging.config.dictConfig(configuration)
+        logger = logging.getLogger('simpleExample')
+        logger_file = logging.getLogger('fileLogger')
+    except yaml.YAMLError as exc:
+         print(exc)
+
+
 def display(any_list):
 	for item in any_list:
 		print(item)
