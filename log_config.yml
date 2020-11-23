@@ -3,7 +3,7 @@ formatters:
   console:
     format: "Time:%(asctime)s, <Level-%(levelname)s>, \n [logger Name: %(name)s ], Line: %(lineno)d == %(message)s"
   file:
-    format: 'Time:%(asctime)s, <Level-%(levelname)s>, {function: %(funcName)s} [Name: %(name)s], Line: %(lineno)d - %(message)s'
+    format: "-> %(asctime)s -- <Level-%(levelname)s>, \n {function: %(funcName)s} [Name: %(name)s], Line: %(lineno)d - %(message)s"
 handlers:
   console:
     class: logging.StreamHandler
@@ -14,7 +14,7 @@ handlers:
     class: logging.FileHandler
     level: INFO
     formatter: file
-    filename: logs.log
+    filename: fetch_camera_logs.log
 loggers:
   console_logger:
     level: INFO

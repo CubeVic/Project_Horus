@@ -17,15 +17,7 @@ import logging.config
 
 
 
-with open('config.yml', 'r') as config:
-    try: 
-        configuration = yaml.safe_load(config.read())
-        print(configuration)
-        logging.config.dictConfig(configuration)
-        logger = logging.getLogger('simpleExample')
-        logger_file = logging.getLogger('fileLogger')
-    except yaml.YAMLError as exc:
-         print(exc)
+
 
 
 def display(any_list):
@@ -57,6 +49,17 @@ def fetch_devices():
 
 
 if __name__ == "__main__":
+
+	with open('config.yml', 'r') as config:
+		try: 
+			configuration = yaml.safe_load(config.read())
+			logging.config.dictConfig(configuration)
+			logger = logging.getLogger('simpleExample')
+			logger_file = logging.getLogger('fileLogger')
+		except yaml.YAMLError as exc:
+			print(exc)
+
+
 	onvif_devices_IPs = fetch_devices()
 	display(sorted(onvif_devices_IPs))
 
