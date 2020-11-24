@@ -3,7 +3,9 @@ from onvif.exceptions import ONVIFError
 import  yaml
 import logging
 import logging.config
-
+from PIL import Image
+import requests
+from io import BytesIO # to read the image/snapshot
 # import cv2 as cv
 
 # logger_file.debug('logger_file debug message')
@@ -24,7 +26,7 @@ def load_logger():
 def get_onvifCamera_client():
 	""" get the onvif.client.ONVIFCamera"""
 	try:
-		camera = ONVIFCamera('172.16.18.124',80,'admin','Aa123456!')
+		camera = ONVIFCamera('172.16.18.162',80,'admin','123456')
 	except Exception as e:
 		logger_file.error(f"Getting camera object ...Failed")
 		logger.error(f'Getting camera object ...Failed')
@@ -70,17 +72,41 @@ def get_snapshot_URI(media_service, token):
 	print(f"snapshot URI: {snapshot_uri}")
 	return snapshot_uri
 
-def get_rtsp(media_service, token):
-    """ get the URI for the stream using RTSP """
-    stream_setup = {'StreamSetup' : 
-                        { 'Stream' : 'RTP_unicast', 
-                          'Transport' : { 'Protocol' : 'TCP' } 
-                          }, 
-                        'ProfileToken' : token}
-    uri = media_service.GetStreamUri(stream_setup)
-    rtsp_stream = uri.Uri
-    print(f'uri: {uri.Uri}')
-    return rtsp_stream
+def get_snapshot(url):
+	""" get the snapshot 
+		TODO:
+		- Automate Auth
+	"""
+	response = requests.get(url, auth=('admin', '123456'))
+	print(type(response.content))
+	img = Image.open(BytesIO(response.content))
+	img.show()# to show the image
+
+
+# def get_rtsp(media_service, token):
+#     """ get the URI for the stream using RTSP """
+
+#     # TODO
+#     stream_setup = {'StreamSetup' : 
+#                         { 'Stream' : 'RTP_unicast', 
+#                           'Transport' : { 'Protocol' : 'UDP' } 
+#                           }, 
+#                         'ProfileToken' : token}
+#     uri = media_service.GetStreamUri(stream_setup)
+#     rtsp_stream = uri.Uri
+#     print(f'uri: {uri.Uri}')
+#     return rtsp_stream
+
+def get_capabilities(media_service):
+	""" get the capabilities of the device, such as 
+	* snapshotUri
+	* Rotation
+	* video Sources
+	* OSD
+	* Streaming capabilities
+	"""
+	capabilities = media_service.GetServiceCapabilities()
+	print(capabilities)
 
 if __name__ == "__main__":
 
@@ -93,4 +119,6 @@ if __name__ == "__main__":
 	cam_profiles_and_tokens = get_camera_profiles(cam_media_service)
 
 	cam_snapshot_uri =  get_snapshot_URI(cam_media_service,cam_profiles_and_tokens[0]['token'] )
-	cam_streaming_rtsp_url = get_rtsp(cam_media_service,cam_profiles_and_tokens[0]['token'])
+	# cam_streaming_rtsp_url = get_rtsp(cam_media_service,cam_profiles_and_tokens[0]['token'])
+	get_capabilities(cam_media_service)
+	get_snapshot(cam_snapshot_uri)
